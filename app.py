@@ -18,7 +18,7 @@ system_message = ("You are a helpful, empathetic therapist. First you should ask
                   "You are a professional and you want to help the user as their therapist.")
 
 
-# Function to interact with the OpenAI API
+# Function to interact with OpenAI API
 def chat_with_therapist(user_input, history):
     messages = [{"role": "system", "content": system_message}] + history + [{"role": "user", "content": user_input}]
     completion = openai.ChatCompletion.create(
@@ -33,7 +33,7 @@ def chat_with_therapist(user_input, history):
     return history, history
 
 
-# HTML content for introduction
+# HTML
 custom_html = """
 <div style="text-align: left; margin: 20px;">
     <h1>Therapist Mike:</h1>
@@ -44,7 +44,7 @@ custom_html = """
 </div>
 """
 
-# Define the Gradio interface
+# Gradio interface
 theme = gr.themes.Ocean(
     primary_hue="indigo",
     secondary_hue="zinc",
@@ -66,5 +66,5 @@ with gr.Blocks(theme=theme, fill_height=True) as demo:
 
     submit_button.click(chat_with_therapist, inputs=[user_input, chat_history], outputs=[chatbot, chat_history])
 
-# Launch the interface with share=True to create a public link
+# Launch interface
 demo.launch(share=True)
