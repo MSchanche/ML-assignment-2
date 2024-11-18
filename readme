@@ -1,0 +1,12 @@
+Besvarelsen består av:
+
+rapport.pdf, min tekstbesvarelse på oppgaven.
+
+app.py, selve programmet med all koden jeg har brukt. Trenger en nøkkel i .env for å fungere, ellers virker kun interface
+
+requirements.txt, tilleggene som trengs, versjonsnummer for openai er viktig.
+
+.env trenger nøkkel fra https://platform.openai.com/api-keys.
+
+videogjennomgang.mp4 illustrerer terapauten in action.
+
